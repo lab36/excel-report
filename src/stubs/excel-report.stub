@@ -1,0 +1,24 @@
+<?php
+namespace {{namespace}};
+
+use Lab36\ExcelReport\ExcelReport;
+
+class {{class}} extends ExcelReport
+{
+    /**
+     * Set column to title mapping
+     * only columns that appear in this array are written to excel
+     * on the right side we have the title from header
+     * [ 'column_1' => 'title_1',
+     *   'column_2' => 'title_2']
+     *
+     * ['first_name'=>'First Name',
+     *   'last_name'=>'Last Name']
+     *
+     * @return array
+     */
+    public function columnMappings(): array
+    {
+        return [];
+    }
+}
