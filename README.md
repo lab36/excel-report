@@ -361,7 +361,9 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 
-- [Lab36](https://github.com/excel-report)
+- [Lab36](https://github.com/lab36)
+- Cosmin Natea
+- Andrea Molnar
 - [All Contributors](../../contributors)
 
 ## License
