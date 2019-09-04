@@ -1,9 +1,7 @@
 # ExcelReport
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/excel-report/excel-report.svg?style=flat-square)](https://packagist.org/packages/excel-report/excel-report)
-[![Build Status](https://img.shields.io/travis/excel-report/excel-report/master.svg?style=flat-square)](https://travis-ci.org/excel-report/excel-report)
-[![Quality Score](https://img.shields.io/scrutinizer/g/excel-report/excel-report.svg?style=flat-square)](https://scrutinizer-ci.com/g/excel-report/excel-report)
-[![Total Downloads](https://img.shields.io/packagist/dt/excel-report/excel-report.svg?style=flat-square)](https://packagist.org/packages/excel-report/excel-report)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/lab36/excel-report.svg?style=flat-square)](https://packagist.org/packages/lab36/excel-report)
+[![Total Downloads](https://img.shields.io/packagist/dt/lab36/excel-report.svg?style=flat-square)](https://packagist.org/packages/lab36/excel-report)
 
 
 This package allows you to generate Microsoft Excel files from any collection or array. You can easily apply formatting, styles or themes. It comes bundled with beautiful themes ready to use.
