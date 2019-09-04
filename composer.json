@@ -1,12 +1,13 @@
 {
     "name": "lab36/excel-report",
     "version": "0.2.1",
-    "description": "Personalizable Excel reports in Laravel",
+    "description": "Customizable Excel reports in Laravel",
     "keywords": [
         "excel-report",
         "laravel",
 	"excel",
-	"export"
+	"export",
+	"themes"
     ],
     "license": "MIT",
     "type": "library",
