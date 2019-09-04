@@ -1,0 +1,57 @@
+{
+    "name": "lab36/excel-report",
+    "description": "Personalizable Excel reports in Laravel",
+    "keywords": [
+        "excel-report",
+        "laravel",
+	"excel",
+	"export"
+    ],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Lab36",
+            "email": "support@lab36.ro",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "illuminate/support": "^5.8|^6.0",
+    	"phpoffice/phpspreadsheet": "^1.5"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lab36\\ExcelReport\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lab36\\ExcelReport\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lab36\\ExcelReport\\ExcelReportServiceProvider"
+            ],
+            "aliases": {
+                "ExcelReport": "Lab36\\ExcelReport\\ExcelReportFacade"
+            }
+        }
+    },
+    "minimum-stability": "stable"
+}
