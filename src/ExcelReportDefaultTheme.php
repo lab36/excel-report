@@ -15,8 +15,12 @@ class ExcelReportDefaultTheme implements ExcelThemeInterface
     public function apply(Worksheet $active_sheet, int $title_row_no, int $filter_row_no, int $header_row_no, int $no_of_rows, int $no_of_columns)
     {
         $first_data_row = max($title_row_no, $filter_row_no, $header_row_no) + 1;
-
         $active_sheet->setShowGridLines(false);
+
+        /**
+         *
+         * Apply style to title
+         */
         $active_sheet->getRowDimension($title_row_no)->setRowHeight(45);
 
         $title_style = [
@@ -31,6 +35,11 @@ class ExcelReportDefaultTheme implements ExcelThemeInterface
 
         $active_sheet->getStyle('A'.$title_row_no)->applyFromArray($title_style);
 
+
+        /**
+         *
+         * Apply style for filters
+         */
         $filter_style = [
             'font' => [
                 'bold' => true,
@@ -49,6 +58,10 @@ class ExcelReportDefaultTheme implements ExcelThemeInterface
 
         $active_sheet->getStyle('A'.$filter_row_no.':'.Coordinate::stringFromColumnIndex($no_of_columns).$filter_row_no)->applyFromArray($filter_style);
 
+        /**
+         *
+         * Apply style to header
+         */
         $active_sheet->getRowDimension($header_row_no)->setRowHeight(30);
         $header_style = [
             'font' => [
@@ -72,6 +85,10 @@ class ExcelReportDefaultTheme implements ExcelThemeInterface
 
         $active_sheet->getStyle('A'.$header_row_no.':'.Coordinate::stringFromColumnIndex($no_of_columns).$header_row_no)->applyFromArray($header_style);
 
+        /**
+         *
+         * Draw line under title
+         */
         $active_sheet->getStyle('A'.($title_row_no + 1).':B'.($title_row_no + 1))->applyFromArray(
             [
                 'borders' => [
@@ -83,6 +100,10 @@ class ExcelReportDefaultTheme implements ExcelThemeInterface
             ]
         );
 
+        /**
+         *
+         * Set date after title
+         */
         $active_sheet->setCellValue('B'.($title_row_no + 1), Carbon::today()->toDateString());
         $active_sheet->getStyle('B'.($title_row_no + 1))->applyFromArray(
             [
@@ -99,6 +120,10 @@ class ExcelReportDefaultTheme implements ExcelThemeInterface
             ]
         );
 
+        /**
+         *
+         * Apply style for table
+         */
         $table_style = [
             'borders' => [
                 'allBorders' => [
@@ -112,6 +137,10 @@ class ExcelReportDefaultTheme implements ExcelThemeInterface
 
         $active_sheet->getStyle('A'.($first_data_row).':'.Coordinate::stringFromColumnIndex($no_of_columns).($no_of_rows))->applyFromArray($table_style);
 
+        /**
+         *
+         * Apply style to columns
+         */
         $column_style = [
             'fill' => [
                 'fillType' => Fill::FILL_SOLID,
