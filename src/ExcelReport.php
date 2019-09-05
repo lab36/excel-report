@@ -264,7 +264,7 @@ abstract class ExcelReport
                 $this->theme->applyCellStyle($this->activeSheet, $current_row, $i, $value);
                 $this->activeSheet->setCellValue(Coordinate::stringFromColumnIndex($i).$current_row, $row_data[$key]);
                 if ($this->shouldFormatDate($key, $row_data[$key])) {
-                    $this->activeSheet->setCellValue(Coordinate::stringFromColumnIndex($i).$current_row, Date::PHPToExcel(Carbon::parse($row_data[$key],'UTC')->timestamp));
+                    $this->activeSheet->setCellValue(Coordinate::stringFromColumnIndex($i).$current_row, Date::PHPToExcel(Carbon::parse($row_data[$key])->toDateString()));
                 }
                 $this->overrideCell($this->activeSheet, $current_row, $i, $row_data[$key], $row_data, $key);
 
