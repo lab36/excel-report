@@ -112,6 +112,8 @@ class ReportController extends Controller
 
 ![banner](projects_data_scr_1.png)
 
+For more examples follow this [link](https://github.com/lab36/excel-report-examples).
+
 ## Installation
 
 You can install the package via composer:
