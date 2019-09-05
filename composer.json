@@ -1,6 +1,5 @@
 {
     "name": "lab36/excel-report",
-    "version": "0.2.1",
     "description": "Customizable Excel reports in Laravel",
     "keywords": [
         "excel-report",
