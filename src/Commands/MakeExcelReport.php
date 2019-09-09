@@ -3,6 +3,7 @@
 namespace Lab36\ExcelReport\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 use Illuminate\Filesystem\Filesystem;
 
 class MakeExcelReport extends Command
@@ -122,7 +123,7 @@ class MakeExcelReport extends Command
      */
     public function makeClassName()
     {
-        $parts = array_map('studly_case', explode('\\', $this->argument('name')));
+        $parts = array_map([Str::class, 'studly'], explode('\\', $this->argument('name')));
         $className = array_pop($parts);
         $ns = count($parts) > 0 ? implode('\\', $parts).'\\' : '';
 
