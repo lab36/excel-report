@@ -276,7 +276,7 @@ abstract class ExcelReport
     }
 
 
-    public function overrideCell(Worksheet $active_sheet, int $current_row_no, int $column_no, string $value, array $row_data, string $column_name)
+    public function overrideCell(Worksheet $active_sheet, int $current_row_no, int $column_no, $value, array $row_data, string $column_name)
     {
         return;
     }
