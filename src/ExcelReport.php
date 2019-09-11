@@ -262,7 +262,9 @@ abstract class ExcelReport
             $this->theme->applyRowStyle($this->activeSheet, $current_row, $row_data);
             foreach ($this->column_mapping as $key => $value) {
                 $this->theme->applyCellStyle($this->activeSheet, $current_row, $i, $value);
-                $this->activeSheet->setCellValue(Coordinate::stringFromColumnIndex($i).$current_row, $row_data[$key]);
+                if ( ! is_array($row_data[$key]) && ! is_object($row_data[$key])) {
+                    $this->activeSheet->setCellValue(Coordinate::stringFromColumnIndex($i).$current_row, $row_data[$key]);
+                }
                 if ($this->shouldFormatDate($key, $row_data[$key])) {
                     $this->activeSheet->setCellValue(Coordinate::stringFromColumnIndex($i).$current_row, Date::PHPToExcel(Carbon::parse($row_data[$key])->toDateString()));
                 }
