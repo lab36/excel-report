@@ -34,7 +34,7 @@ abstract class ExcelReport
     /**
      * @var array
      */
-    private $column_mapping = [];
+    protected $column_mapping = [];
     /**
      * @var array
      */
@@ -54,7 +54,7 @@ abstract class ExcelReport
     /**
      * @var int
      */
-    private $no_of_columns = 1;
+    protected $no_of_columns = 1;
     /**
      * @var Spreadsheet
      */
@@ -93,7 +93,7 @@ abstract class ExcelReport
     }
 
 
-    private function init($title, $data)
+    protected function init($title, $data)
     {
         $this->title = $title;
         $this->data = $data;
