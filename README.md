@@ -112,7 +112,7 @@ class ReportController extends Controller
 
 ![banner](projects_data_scr_1.png)
 
-For more examples follow this [link](https://github.com/lab36/excel-report-examples).
+For more examples follow this [link](https://github.com/lab36/excel-report-examples/blob/master/app/ExcelReport/InvoicesReport.php).
 
 ## Installation
 
@@ -335,7 +335,7 @@ To override any cell of the report you can implement the overrideCell method in 
 
 
 ```php
-public function overrideCell(Worksheet $active_sheet, int $current_row_no, int $column_no, string $value, array $row_data, string $column_name)
+public function overrideCell(Worksheet $active_sheet, int $current_row_no, int $column_no, $value, array $row_data, string $column_name)
 {
     if ($column_name == 'order_type' && is_numeric($value)) {
         $active_sheet->setCellValue(Coordinate::stringFromColumnIndex($column_no).$current_row_no,
@@ -344,6 +344,8 @@ public function overrideCell(Worksheet $active_sheet, int $current_row_no, int $
 }
 ```
 Here you can override data, formatting, styling, alignment, etc. You can use any PhpSpreadsheet function available for the active sheet.
+
+If you are not using a flat array with overrideCell you can pick the values that you want to appear in your cell. You can check the example [here]().
 
 ### Config file
 In the config file you can define
