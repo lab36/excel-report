@@ -345,7 +345,7 @@ public function overrideCell(Worksheet $active_sheet, int $current_row_no, int $
 ```
 Here you can override data, formatting, styling, alignment, etc. You can use any PhpSpreadsheet function available for the active sheet.
 
-If you are not using a flat array with overrideCell you can pick the values that you want to appear in your cell. You can check the example [here]().
+If you are not using a flat array with overrideCell you can pick the values that you want to appear in your cell. You can check the example [here](https://github.com/lab36/excel-report-examples/blob/master/app/ExcelReport/InvoicesReport.php).
 
 ### Config file
 In the config file you can define
